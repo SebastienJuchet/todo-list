@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+
+.container {
+    width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    background: linear-gradient(0.25turn, #7c4bb4, #79394a);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    margin-top: 2em;
+    font-size: 3em;
+    letter-spacing: .5rem;
+    color: #ffffff;
+}
+
+.new-todo {
+    position: relative;
+}
+
+.new-todo > form > input {
+    height: 2.5em;
+    width: 20vw;
+    padding-left: 10px;
+    margin-right: 1em;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 2px;
+}
+
+.new-todo > form > input:focus {
+    outline-style: none;
+}
+
+#error-input-js {
+    display: none;
+    position: absolute;
+    top: 5.5em;
+    left: 3em;
+    padding: 0.4em;
+    background-color: red;
+    color: #ffffff;
+    border: 2px solid red;
+    font-size: .8em;
+    border-radius: 5px;
+}
+
+#error-input-js::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 5px);
+    height : 0;
+    width : 0;
+    border-right : 10px solid transparent;
+    border-bottom : 10px solid red;
+    border-left : 10px solid transparent;
+}
+
+.new-todo > form > button {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: .7em;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 2px;
+}
+
+.new-todo > form > button:focus {
+    outline-style: none;
+}
+
+#list {
+    width: 40vw;
+    margin: 2em 0;
+}
+
+.list-todo {
+    position: relative;
+    background-color: #ffffff;
+    font-size: 2em;
+    margin-top: .8em;
+    padding: .4em;
+    border-radius: 5px;
+}
+
+.btn-delete {
+    position: absolute;
+    height: 1.6em;
+    width: 1.6em;
+    top: calc(50% - 0.8em);
+    right: 1rem;
+    font-size: 1.2rem;
+    color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.btn-delete:focus {
+    outline-style: none;
+}
+
+.btn-valid {
+    position: absolute;
+    height: 1.6em;
+    width: 1.6em;
+    top: calc(50% - 0.8em);
+    right: 3.5rem;
+    font-size: 1.2rem;
+    color: green;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+.btn-valid:focus {
+    outline-style: none;
+}
+
+.validated {
+    filter: opacity(50%);
+    transform: translateX(1em);
+}
+
+.validated:first-child {
+    text-decoration: line-through;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.5em;
+    }
+
+    .new-todo > form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .new-todo > form > input {
+        width: 10em;
+        margin-bottom: 50px;
+    }
+
+    .new-todo > form > button {
+        width: 10em;
+    }
+
+    #error-input-js {
+        top: 5em;
+        left: 2.5em;
+    }
+
+    #list {
+        width: 75vw;
+    }
+
+    .list-todo {
+        font-size: 1.2em;
+    }
+
+    .btn-valid {
+        height: 1.4em;
+        width: 1.4em;
+        top: calc(50% - 0.7em);
+        right: 2.5rem;
+        font-size: 1rem;
+    }
+
+    .btn-delete {
+        height: 1.4em;
+        width: 1.4em;
+        top: calc(50% - 0.7em);
+        right: 0.6rem;
+        font-size: 1rem;
+    }
+}
